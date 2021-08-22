@@ -77,9 +77,9 @@
     "gateway_conf": {
         "gateway_ID": "AA555A0000000000",
         /* change with default server address/ports */
-        "server_address": "localhost",
-        "serv_port_up": 1730,
-        "serv_port_down": 1730,
+        "server_address": "router.us.thethings.network",
+        "serv_port_up": 1700,
+        "serv_port_down": 1700,
         /* adjust the following parameters for your network */
         "keepalive_interval": 10,
         "stat_interval": 30,
@@ -89,7 +89,7 @@
         "forward_crc_error": false,
         "forward_crc_disabled": false,
         /* GPS configuration */
-        "gps_tty_path": "/dev/ttyS0",
+        "gps_tty_path": "/dev/ttyAMA0",
         /* GPS reference coordinates */
         "ref_latitude": 0.0,
         "ref_longitude": 0.0,
@@ -101,6 +101,18 @@
         "beacon_bw_hz": 125000,
         "beacon_power": 14,
         "beacon_infodesc": 0
+        /* To next elements enables or disables sending "temp" data element in "stat" datagram" */
+        /* If following line is missing the default value is true and the temp variable is included in the stat datagram */
+        /* to send temperature data element set the following to true, to prevent sending the "temp" set the following to false  */
+        "temperature_active":false,
+        /* some SX1302 gateway modules do not have a stts751 temperature sensor installed.  As a result the packet forwarder will fail to start */
+		/* where the sensor is installed place "true" in the next line of code */
+		/* where there is no sensor, place "false" in the next line of code */
+        "temperature_sensor": true,
+        /* when there is no sensor, set the expected temperature which is used in the calculation of rssi */
+        /* if the previous line of code was set to "true" the following temperature setting is ignore. */
+		/* if the following line is missing but required, the default value is 20.0C */
+        "temperature_value": 25.0
     },
 
     "debug_conf": {
