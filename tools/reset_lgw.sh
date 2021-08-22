@@ -4,7 +4,7 @@
 # the following actions:
 #       - export/unpexort GPIO23 and GPIO18 used to reset the SX1302 chip and to enable the LDOs
 #       - export/unexport GPIO22 used to reset the optional SX1261 radio used for LBT/Spectral Scan
-#
+# change1
 # Usage examples:
 #       ./reset_lgw.sh stop
 #       ./reset_lgw.sh start
